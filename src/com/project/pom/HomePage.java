@@ -12,6 +12,8 @@ public class HomePage extends UtilityClass {
 
 	By searcherLocator = By.id("searchButton");
 	By searcherInput = By.id("search-text-header");
+	By resultGrid = By.className("grid-items");
+	By resultOutput = By.cssSelector(".search-query");
 
 	
 	public void searchText() throws InterruptedException {
@@ -22,11 +24,29 @@ public class HomePage extends UtilityClass {
 			Thread.sleep(2000);
 			type("ART", searcherInput);
 			enter(searcherInput);
+			Thread.sleep(2000);
 		}
 		else {
-			System.out.print("No se encontro el elemento");
+			System.out.print("No se encontro el buscador");
 		}
 	}
-
 	
+	public void resultGridOn() throws InterruptedException {
+		if (isDisplayed(resultGrid)) {
+
+		}
+		else {
+			System.out.print("No se encontro el Grilla");
+		} 
+	}
+
+	public String resultText() throws InterruptedException {
+		if (isDisplayed(resultOutput)) {
+	    getText(resultOutput);
+		}
+		else {
+			System.out.print("No se encontro el elemento buscado");
+		} return  getText(resultOutput);
+	}
+			
 }

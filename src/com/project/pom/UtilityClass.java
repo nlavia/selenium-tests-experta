@@ -18,8 +18,9 @@ public class UtilityClass {
 	
 	public WebDriver chromeWebDriverConnection() {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver.exe");
-	driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", ".\\src\\tests\\resources\\chromedriver\\chromedriver.exe");
+
+		driver = new ChromeDriver();
 	return driver;
 		
 	}
@@ -67,3 +68,5 @@ public class UtilityClass {
 	}
 	
 }
+	
+
