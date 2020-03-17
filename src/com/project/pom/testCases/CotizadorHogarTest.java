@@ -1,6 +1,4 @@
-package com.project.pom;
-
-
+package com.project.pom.testCases;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
@@ -8,36 +6,35 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
-class SearchTest {
+import com.project.pom.HomePage;
 
+class CotizadorHogarTest {
 	
 	private WebDriver driver;
 	HomePage  homePage;
-		
-	
+
 	@BeforeEach
-	public void setUp() throws Exception {
+	void setUp() throws Exception {
+		
 		homePage = new HomePage(driver);
-		//resultHomePage = new ResultHomePage(driver);
 		driver = homePage.chromeWebDriverConnection();
 		homePage.visit("https://www.experta.com.ar/");
 	}
 
 	@AfterEach
-	public void tearDown() throws Exception {
+	void tearDown() throws Exception {
 	
-	driver.close();
+		driver.close();
+		
 	}
 
 	@Test
-	public void test() throws  InterruptedException{
-	homePage.searchText();
-	homePage.resultGridOn();
-	
-	Assert.assertEquals( "ART", homePage.resultText());
-	
-  			
-
+	void test() throws InterruptedException {
+		Thread.sleep(2000);
+		//homePage.clickCotizaHogarButton();
+		Assert.assertEquals( "Se mostro el cotizador", homePage.clickCotizaHogarButton());
+		
+		
 	}
 
 }

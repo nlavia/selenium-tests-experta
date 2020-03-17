@@ -15,6 +15,11 @@ public class HomePage extends UtilityClass {
 	By resultGrid = By.className("grid-items");
 	By resultOutput = By.cssSelector(".search-query");
 
+	By cotizaHogarButton = By.linkText("CONOCÉ MÁS");
+    By cotizadorLocator = By.cssSelector(".cotizador-home");
+
+	
+	
 	
 	public void searchText() throws InterruptedException {
 		click(searcherLocator);
@@ -43,10 +48,26 @@ public class HomePage extends UtilityClass {
 	public String resultText() throws InterruptedException {
 		if (isDisplayed(resultOutput)) {
 	    getText(resultOutput);
+	  
 		}
 		else {
 			System.out.print("No se encontro el elemento buscado");
 		} return  getText(resultOutput);
 	}
-			
+
+	public String clickCotizaHogarButton() throws InterruptedException {
+		Thread.sleep(400);
+		click(cotizaHogarButton);
+		Thread.sleep(2000);
+		if (isDisplayed(cotizadorLocator)) {
+		
+		 
+			}
+			else {
+				System.out.print("No se encontro el elemento");
+			} return  "Se mostro el cotizador";
+		
+		
+	}
+	
 }

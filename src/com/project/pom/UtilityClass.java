@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class UtilityClass {
 
@@ -47,9 +48,16 @@ public class UtilityClass {
 		driver.findElement(locator).sendKeys(inputText);
 	}
 	
+
+	public void actionMove(WebElement element) {
+		 Actions builder = new Actions(driver);
+	      builder.moveToElement(element, 0, 0).perform();
+	}
+	
 	public void click (By locator) {
 		driver.findElement(locator).click();
 	}
+	
 	
 	public void enter (By locator) {
 		driver.findElement(locator).sendKeys(Keys.ENTER);;
