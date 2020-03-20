@@ -33,7 +33,6 @@ class CotizadorHogarTest {
 	@Test
 	void test() throws InterruptedException {
 		Thread.sleep(2000);
-		//homePage.clickCotizaHogarButton();
 		Assert.assertEquals( "Se mostro el cotizador", homePage.clickCotizaHogarButton());
 		
 		

@@ -8,7 +8,8 @@ Instrucciones:
 
 Para ejecutar las pruebas se debe importar el proyecto a Cliente de Explipse (Generado con Eclipse IDE)
 
-Una vez importado el proyecto, para ejecutar los test, situarse sobre el directorio /selenium-tests/src/com/project/pom/testCases
+Una vez importado el proyecto, importar las librerias de maven. (Maven > Update Project)
+Para ejecutar los test, situarse sobre el directorio /selenium-tests/src/test
 Dar Click derecho sobre el directorio y ejecutar como JUnit Test.
 
 Esto ejecutara los escenarios:
