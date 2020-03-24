@@ -16,11 +16,8 @@ public class HomePage extends UtilityClass {
 	By resultOutput = By.cssSelector(".search-query");
 
 	By cotizaHogarButton = By.linkText("CONOCÉ MÁS");
-    By cotizadorLocator = By.cssSelector(".cotizador-home");
+	By cotizadorLocator = By.cssSelector(".cotizador-home");
 
-	
-	
-	
 	public void searchText() throws InterruptedException {
 		click(searcherLocator);
 		Thread.sleep(2000);
@@ -30,29 +27,27 @@ public class HomePage extends UtilityClass {
 			type("ART", searcherInput);
 			enter(searcherInput);
 			Thread.sleep(2000);
-		}
-		else {
+		} else {
 			System.out.print("No se encontro el buscador");
 		}
 	}
-	
+
 	public void resultGridOn() throws InterruptedException {
 		if (isDisplayed(resultGrid)) {
 
-		}
-		else {
+		} else {
 			System.out.print("No se encontro el Grilla");
-		} 
+		}
 	}
 
 	public String resultText() throws InterruptedException {
 		if (isDisplayed(resultOutput)) {
-	    getText(resultOutput);
-	  
-		}
-		else {
+			getText(resultOutput);
+
+		} else {
 			System.out.print("No se encontro el elemento buscado");
-		} return  getText(resultOutput);
+		}
+		return getText(resultOutput);
 	}
 
 	public String clickCotizaHogarButton() throws InterruptedException {
@@ -60,14 +55,12 @@ public class HomePage extends UtilityClass {
 		click(cotizaHogarButton);
 		Thread.sleep(2000);
 		if (isDisplayed(cotizadorLocator)) {
-		
-		 
-			}
-			else {
-				System.out.print("No se encontro el elemento");
-			} return  "Se mostro el cotizador";
-		
-		
+
+		} else {
+			System.out.print("No se encontro el elemento");
+		}
+		return "Se mostro el cotizador";
+
 	}
-	
+
 }
