@@ -20,7 +20,7 @@ import org.junit.runner.notification.Failure;
 public class TestRunner {
 
 	public static void main(String[] args) {
-		Result result = JUnitCore.runClasses(TestSuit.class);
+		Result result = JUnitCore.runClasses(TestSuite.class);
 		for (Failure failure : result.getFailures()) {
 			System.out.println("El test paso la prueba:" + failure.toString());
 		}
